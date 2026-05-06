@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <title>Kuantico - Almacen</title>
-    <link rel="icon" href="./icon/favicon.ico">
+    <link rel="icon" href="./img/logo.webp">
     <meta property="og:title" content="Kuantico - Almacen" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kuantico-almacen.com.ar" />
     <meta property="og:image" content="./img/logo-universo.png" />
     <meta property="og:description" content="Kuantico Almacen - Tu parada en el universo de sabores."/>
 </head>
-<body>
+<body id="top">
     <div id="inicio-v">
         <div class="video-fondo">
             <video class="video-grande" autoplay muted loop playsinline>
@@ -28,13 +28,11 @@
             <div class="contenido">
                 <header>
                     <div class="contenido-header">
-                        <img src="./img/logo.webp" alt="Kuantico Logo" class="kuantico-logo">
+                        <img src="./img-ia/Diapositiva3.PNG" alt="Kuantico Logo" class="kuantico-logo">
                         <nav id="nav">
                             <ul id="links">
                                 <li><a href="#inicio" class="seleccionando" onclick="seleccionar(this)">Inicio</a></li>
                                 <li><a href="#contacto">Contacto</a></li>
-                                <li><a href="#ubicacion">Ubicación</a></li>
-                                
                             </ul>
                         </nav>
                         <div id="icon-nav" onclick="responsiveMenu()" class="icono-menu">
@@ -43,7 +41,7 @@
                     </div>                
                 </header>
                 <div class="presentacion">
-                    <div class="bienvenida">Bienvenidos a</div>
+                    <div class="bienvenida">Bienvenidos</div>
                     <h2>KUANTICO <span>ALMACEN</span></h2>
                     <p class="descripcion">Tu parada en el universo de sabores.</p>
                     <a href="https://maps.app.goo.gl/Dsgkor6bpZo4KePY9" target="_blank">¿Cómo llegar?</a>
@@ -52,71 +50,55 @@
         </section>    
     </div>
 
-    <section id="contacto">
-        <h3 class="titulo-seccion">Contacto</h3>        
-        <div class="fila">
-            <div class="servicio">
-                <a href="#" target="_blank">
-                <img src="./img/what.png" alt="Oferta" class="icono"></a>
-                <h4>WHATSAPP</h4>
-                <div class="servicios-tag">
-                    <p></p>
-                </div> 
-                <p></p>
-                <p></p>
-            </div>
-
-            <div class="servicio">
-                <a href="https://www.instagram.com/kuantico.almacen/" target="_blank">
-                <img src="./img/insta.png" alt="Envios" class="icono"></a>
-                <h4>INSTAGRAM</h4>
-                <div class="servicios-tag">
-                    <p></p>
-                </div>
-                <p></p>
-            </div>
-        </div>
-    </section>
-
-    <section id="ubicacion">        
-        <h2 class="titulo-seccion">Nuestro Almacen</h2>
-        <div class="contenedor-galeria">
-            <div class="info-galeria">
-                <h3>Visítanos en nuestra estación</h3>
-                <p>Haz clic en el mapa para iniciar tu GPS</p>
-                <div class="div-maps">
-                    <a href="https://maps.app.goo.gl/Dsgkor6bpZo4KePY9" target="_blank">
-                        <img src="https://pbs.twimg.com/media/HHlZYUYXIAcS-bu?format=jpg&name=large" alt="Click para ir a Maps" class="img-mapa">
+    <div id="quantum-zone">
+        <canvas id="quantum-bg"></canvas>
+        
+        <section id="contacto">
+            <h3 class="titulo-seccion">Contacto</h3>        
+            <div class="fila">
+                <div class="servicio card-whatsapp">
+                    <a href="#" target="_blank">
+                        <img src="./img/what.png" alt="WhatsApp Kuantico" class="icono">
                     </a>
+                    <h4></h4>
+                    <div class="servicios-tag"><p></p></div> 
+                    <p></p>
+                </div>
+
+                <div class="servicio card-instagram">
+                    <a href="https://www.instagram.com/kuantico.almacen/" target="_blank">
+                        <img src="./img/insta.png" alt="Instagram Kuantico" class="icono">
+                    </a>
+                    <h4></h4>
+                    <div class="servicios-tag"><p></p></div>
+                    <p></p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!--<section id="contacto">
-        <h3 class="titulo-seccion">Contacto</h3>
-        <div class="contenedor-form">
-            <form action="#">
-                <div class="mitad">
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="email" placeholder="Email" required>
+        <section id="ubicacion">        
+            <h2 class="titulo-seccion"><a href="https://maps.app.goo.gl/Dsgkor6bpZo4KePY9" target="_blank"><i class="fa-solid fa-location-dot"></i></i></a>Visítanos</h2>
+            <div class="contenedor-galeria">
+                <div class="info-galeria">
+                    <h3>Nuñez 2640 local 2, C1429 Cdad. Autónoma de Buenos Aires</h3>
+                    <p></p>
+                    <div class="div-maps">
+                        <a href="https://maps.app.goo.gl/Dsgkor6bpZo4KePY9" target="_blank">
+                            <img src="https://pbs.twimg.com/media/HHmD_01WwAYjpsi?format=jpg&name=large" alt="Click para ir a Maps" class="img-mapa">
+                        </a>
+                    </div>
                 </div>
-                <textarea placeholder="¿Qué necesitas?" rows="5"></textarea>
-                <input type="submit" value="Enviar al Universo" class="btn-enviar">
-            </form>
-        </div>
-    </section>-->
+            </div>
+        </section>
 
-    <footer class="footer">
-        <p>Kuantico - Almacen | 2026</p>
-        <p>TODOS LOS DERECHOS RESERVADOS</p>
-        <div class="redes-footer">
-            <!--<a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>-->
-        </div>
-    </footer>
-
+        <footer class="footer">
+            <p>Kuantico - Almacen | 2026</p>
+            <p>TODOS LOS DERECHOS RESERVADOS</p>
+            <div class="redes-footer"></div>
+        </footer>
+    </div>
     <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html>

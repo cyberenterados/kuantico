@@ -1,278 +1,129 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+:root {
+    --space-dark: #05050a;
+    --quantum-cyan: #00f2ff;
+    --neon-pink: #ff007a;
+    --star-white: #ffffff;
 }
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background-color: #050510; color: #fff; }
+body { background-color: var(--space-dark); color: var(--star-white); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 
-/* Control de Videos Responsivos */
+/* Control de Videos Responsivos (Sin cambios) */
 #inicio-v { height: 100vh; position: relative; overflow: hidden; }
 .video-fondo { position: absolute; width: 100%; height: 100%; z-index: -1; }
 .video-fondo video { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
-
 .video-grande { display: block; }
 .video-vertical { display: none; }
+@media screen and (max-width: 768px) { .video-grande { display: none; } .video-vertical { display: block; } }
 
-@media screen and (max-width: 768px) {
-    .video-grande { display: none; }
-    .video-vertical { display: block; }
-}
-
-/* Header */
+/* Header y Presentación (Sin cambios) */
 header { background: rgba(5, 5, 16, 0.9); border-bottom: 1px solid #bc00ff; position: fixed; width: 100%; z-index: 100; }
 .contenido-header { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
-.kuantico-logo { height: 50px; filter: drop-shadow(0 0 5px #00f3ff); }
+.kuantico-logo { height: 60px; filter: drop-shadow(0 0 5px #00f3ff); }
 nav ul { list-style: none; display: flex; }
-nav ul li a { text-decoration: none; color: #00f3ff; margin: 0 15px; font-weight: 600; text-transform: uppercase; font-size: 13px; transition: 0.3s; }
+nav ul li a { text-decoration: none; color: #00f3ff; margin: 0 15px; font-weight: 600; text-transform: uppercase; font-size: 14px; transition: 0.3s; }
 nav ul li a:hover { color: #bc00ff; text-shadow: 0 0 10px #bc00ff; }
-
-/* Presentación */
 .presentacion { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.presentacion h2 { font-size: 55px; letter-spacing: 2px; }
-.presentacion h2 span { color: #00f3ff; text-shadow: 0 0 15px #00f3ff; }
-.presentacion a { text-decoration: none; padding: 12px 30px; border: 2px solid #bc00ff; color: #fff; border-radius: 30px; margin-top: 20px; transition: 0.4s; }
-.presentacion a:hover { background: #bc00ff; box-shadow: 0 0 20px #bc00ff; }
+.presentacion h2 { font-size: 60px; margin: 10px 0; letter-spacing: 3px; color: #fff; }
+.presentacion h2 span { color: #00f3ff; text-shadow: 0 0 20px #00f3ff; }
+.presentacion a { text-decoration: none; padding: 12px 30px; border: 2px solid #bc00ff; color: #fff; border-radius: 30px; margin-top: 20px; transition: 0.4s; background: transparent; }
+.presentacion a:hover { background: linear-gradient(90deg, #bc00ff, #00f3ff); border-color: transparent; box-shadow: 0 0 20px rgba(188, 0, 255, 0.6); }
 
-/* Nueva Sección Ubicación con Imagen de Fondo */
-#ubicacion {
-    padding: 80px 0;
-    text-align: center;
-    background: linear-gradient(rgba(5, 5, 16, 0.7), rgba(5, 5, 16, 0.7)), url('../img/fondo-almacen.png'); /* Fondo PNG solicitado */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.div-maps {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.img-mapa {
-    width: 200px; /* Imagen de Google Maps */
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0 0 10px #00f3ff);
-}
-
-.img-mapa:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 20px #bc00ff);
-}
-
-/* Contacto y Footer */
-#contacto { padding: 100px 20px; background: #050510; }
-.contenedor-form { max-width: 800px; margin: auto; }
-.contenedor-form input, .contenedor-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: #fff; border-radius: 5px; }
-.btn-enviar { background: #bc00ff !important; border: none !important; font-weight: bold; cursor: pointer; }
-footer { padding: 40px; text-align: center; border-top: 1px solid #333; }
-
-/* Responsive */
-@media screen and (max-width: 800px) {
-    nav { display: none; }
-    .icono-menu { display: block; color: #00f3ff; font-size: 24px; cursor: pointer; }
-    nav.responsive { display: block; position: absolute; top: 70px; left: 0; width: 100%; background: #050510; }
-    nav.responsive ul { flex-direction: column; padding: 20px; }
-    nav.responsive ul li { margin: 10px 0; text-align: center; }
-}
-
-/* probando */
-
-#inicio-v {
-    height: 100vh;
+/* --- ZONA CUÁNTICA (Fondo animado) --- */
+#quantum-zone {
     position: relative;
-    overflow: hidden;
+    background: linear-gradient(180deg, #050510 0%, #020205 100%);
 }
 
-.video-fondo {
+#quantum-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0; /* Detrás del contenido de esta zona */
 }
 
-.video-fondo video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.4);
-}
-
-/* Header Estilo Universo */
-header {
-    background-color: rgba(5, 5, 16, 0.9);
-    border-bottom: 1px solid #bc00ff;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-}
-
-.contenido-header {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.kuantico-logo {
-    height: 60px;
-    filter: drop-shadow(0 0 5px #00f3ff);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #00f3ff;
-    margin: 0 15px;
-    font-weight: 600;
-    transition: 0.3s;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-nav ul li a:hover {
-    color: #bc00ff;
-    text-shadow: 0 0 10px #bc00ff;
-}
-
-.redes a {
-    color: #ffffff;
-    margin-left: 15px;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.redes a:hover {
-    color: #00f3ff;
-}
-
-/* Presentación */
-.presentacion {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.presentacion h2 {
-    font-size: 60px;
-    margin: 10px 0;
-    letter-spacing: 3px;
-    color: #fff;
-}
-
-.presentacion h2 span {
-    color: #00f3ff;
-    text-shadow: 0 0 20px #00f3ff;
-}
-
-.presentacion a {
-    text-decoration: none;
-    padding: 12px 30px;
-    border: 2px solid #bc00ff;
-    color: #fff;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.4s;
-    background: transparent;
-}
-
-.presentacion a:hover {
-    background: linear-gradient(90deg, #bc00ff, #00f3ff);
-    border-color: transparent;
-    box-shadow: 0 0 20px rgba(188, 0, 255, 0.6);
+/* IMPORTANTE: Posicionamiento relativo para que el contenido pase por encima del canvas */
+#contacto, #ubicacion, .footer {
+    position: relative;
+    z-index: 1;
+    background-color: transparent !important; /* Para que se vean los puntos detrás */
 }
 
 /* Secciones Generales */
-.titulo-seccion {
-    font-size: 28px;
+.titulo-seccion { font-size: 28px; color: #00f3ff; text-align: center; margin-bottom: 40px; text-transform: uppercase; }
+.fila { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+/* Contacto y Tarjetas */
+#contacto { padding: 100px 20px; }
+.servicio { background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; overflow: hidden; border: 1px solid #00f3ff; transition: transform 0.3s ease; padding: 40px; border-radius: 15px; width: 350px; text-align: center; }
+.servicio:hover { transform: translateY(-10px) scale(1.02); border-color: #bc00ff; box-shadow: 0 10px 30px rgba(188, 0, 255, 0.2); }
+.servicio .icono { width: 50px; margin-bottom: 20px; }
+.card-whatsapp { background-image: linear-gradient(rgba(5, 5, 16, 0.7), rgba(5, 5, 16, 0.7)), url('../img-ia/Diapositiva1.PNG'); }
+.card-instagram { background-image: linear-gradient(rgba(5, 5, 16, 0.7), rgba(5, 5, 16, 0.7)), url('../img-ia/Diapositiva2.PNG'); }
+
+/* Ubicación */
+#ubicacion { padding: 80px 0; text-align: center; min-height: 500px; display: flex; flex-direction: column; justify-content: center; }
+.div-maps { margin-top: 30px; display: flex; justify-content: center; }
+.img-mapa { width: 200px; cursor: pointer; transition: transform 0.3s ease, filter 0.3s ease; filter: drop-shadow(0 0 10px #00f3ff); }
+.img-mapa:hover { transform: scale(1.1); filter: drop-shadow(0 0 20px #bc00ff); }
+
+.fa-location-dot {
     color: #00f3ff;
-    text-align: center;
-    margin-bottom: 40px;
-    text-transform: uppercase;
+    text-shadow: 0 0 10px #00f3ff;
+    margin-right: 10px; /* Espacio con el texto */
 }
 
-#productos {
-    padding: 100px 20px;
-    background: linear-gradient(180deg, #050510 0%, #1a0033 100%);
+.fa-location-dot:hover { transform: scale(1.1); filter: drop-shadow(0 0 20px #bc00ff); 
 }
 
-.fila {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+
+/* Footer */
+footer { padding: 50px; text-align: center; border-top: 1px solid rgba(0, 243, 255, 0.2); }
+
+/* Responsive */
+.icono-menu { display: none; color: #00f3ff; font-size: 24px; }
+@media screen and (max-width: 800px) {
+    nav { display: none; }
+    .icono-menu { display: block; cursor: pointer; }
+    nav.responsive { display: block; position: absolute; top: 80px; left: 0; width: 100%; background: rgba(5, 5, 16, 0.95); }
+    nav.responsive ul { flex-direction: column; align-items: center; padding: 20px; }
+    nav.responsive ul li { margin: 10px 0; }
 }
 
+/* Estilo general para las tarjetas con fondo */
 .servicio {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 243, 255, 0.3);
-    width: 350px;
-    text-align: center;
-    transition: 0.4s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #00f3ff; /* Borde neón característico */
+    transition: transform 0.3s ease;
 }
 
+/* Fondo específico para WhatsApp */
+.card-whatsapp {
+    background-image:  linear-gradient(rgba(5, 5, 16, 0.7), rgba(5, 5, 16, 0.7)),
+                      url('../img-ia/Diapositiva1.PNG'); /* Reemplaza con tu imagen */
+}
+
+/* Fondo específico para Instagram */
+.card-instagram {
+    background-image: linear-gradient(rgba(5, 5, 16, 0.7), rgba(5, 5, 16, 0.7)), 
+                      url('../img-ia/Diapositiva2.PNG'); /* Reemplaza con tu imagen */
+}
+
+/* Efecto al pasar el mouse */
 .servicio:hover {
-    transform: translateY(-10px);
-    border-color: #bc00ff;
-    box-shadow: 0 10px 30px rgba(188, 0, 255, 0.2);
+    transform: scale(1.05);
+    background-image: linear-gradient(rgba(188, 0, 255, 0.4), rgba(5, 5, 16, 0.8)), 
+                      url('../img/tu-imagen.jpg'); /* Cambio de color a magenta al hacer hover */
 }
 
-.servicio .icono {
-    width: 50px;
-    margin-bottom: 20px;
-}
-
-/* Contacto */
-#contacto {
-    padding: 100px 20px;
-    background: #050510;
-}
-
-.contenedor-form {
-    max-width: 800px;
-    margin: auto;
-}
-
-.contenedor-form input, .contenedor-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    background: #111;
-    border: 1px solid #333;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.btn-enviar {
-    background: #bc00ff !important;
-    font-weight: bold;
-    cursor: pointer;
-    border: none !important;
-}
 
 /* Footer */
 footer {
@@ -305,8 +156,6 @@ footer {
     }
     nav.responsive ul li { margin: 10px 0; }
 }
-
-
 
 
 
